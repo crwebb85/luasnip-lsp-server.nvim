@@ -144,7 +144,9 @@ local handlers = {
             vim.list_extend(completion_items_result, completion_cache_by_filetype[filetype])
         end
 
-        callback(nil, completion_items_result)
+        vim.schedule(function()
+            callback(nil, completion_items_result)
+        end)
     end,
 
     ---@type LspServer.Handler
