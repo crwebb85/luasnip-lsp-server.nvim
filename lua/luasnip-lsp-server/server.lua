@@ -164,8 +164,7 @@ local handlers = {
         end
 
         if completion_item.documentation == nil then
-            local test = vim.lsp.log.debug('luasnip-server: Creating cached documentation for snippet ' .. snip_id)
-            vim.print(test)
+            vim.lsp.log.debug('luasnip-server: Creating cached documentation for snippet ' .. snip_id)
             local filetype = request.data and request.data.filetype
             --Side-effect: modifies cache to include the documentation
             completion_item.documentation = {
@@ -231,7 +230,6 @@ end
 M.start_snippet_lsp = function(capabilities)
     local client_id = vim.lsp.start({
         name = 'luasnip',
-        filetypes = { '*' },
         root_dir = vim.fn.getcwd(),
         capabilities = capabilities or vim.lsp.protocol.make_client_capabilities(),
         ---@type fun(dispatchers: vim.lsp.rpc.Dispatchers): vim.lsp.rpc.PublicClient
