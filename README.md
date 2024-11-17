@@ -2,6 +2,10 @@
 
 An LSP server to provide completion for luasnip snippets
 
+
+https://github.com/user-attachments/assets/ce742aa7-4975-4ce4-ab58-70b6e0ae06db
+
+
 ## ⚡️ Requirements
 
 -   Neovim >= **0.11.0**
